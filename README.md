@@ -12,4 +12,4 @@ LunchVot is a sample bot app designed to work with Slack.
 LunchVot allows teams using Slack to vote for a location to go to lunch. Each user can vote for a place, and then the results are summarized so a decision can be made.
 ### Focus
 This sample demonstrates how simple it is to create a stateful service over the Distribyte platform. Despite not "writing" data to any durable location, this sample creates a stateful service by storing its state in variables.
-This sample's state is resilient to failures and long-living, just as though it were saved in a database or another datastore, without the complexity or performance penalties.
+This sample's state is resilient to failures and is long-living, just as though it were saved in a database or another datastore, without the complexity or performance penalties.
