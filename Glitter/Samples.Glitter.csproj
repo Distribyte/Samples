@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3BE836B7-B188-4036-8356-248A78ECEB9C}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Samples.Glitter</RootNamespace>
+    <AssemblyName>Samples.Glitter</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Samples.Glitter.Class1</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <!--<Reference Include="d.mscorlib">
+      <HintPath>..\packages\distribyte.1.0.1-alpha\lib\d.mscorlib.dll</HintPath>
+    </Reference>-->
+    <Reference Include="Microsoft.CSharp">
+      <!--<HintPath>..\packages\distribyte.1.0.1-alpha\lib\Microsoft.CSharp.dll</HintPath>
+      <Private>True</Private>-->
+    </Reference>
+    <Reference Include="System">
+      <!--<HintPath>..\packages\distribyte.1.0.1-alpha\lib\System.dll</HintPath>
+      <Private>True</Private>-->
+    </Reference>
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Runtime.Serialization">
+      <!--<HintPath>..\packages\distribyte.1.0.1-alpha\lib\System.Runtime.Serialization.dll</HintPath>
+      <Private>True</Private>-->
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <!--<HintPath>..\packages\distribyte.1.0.1-alpha\lib\System.ServiceModel.dll</HintPath>
+      <Private>True</Private>-->
+    </Reference>
+    <Reference Include="System.ServiceModel.Web">
+      <!--<HintPath>..\packages\distribyte.1.0.1-alpha\lib\System.ServiceModel.Web.dll</HintPath>
+      <Private>True</Private>-->
+    </Reference>
+    <Reference Include="System.Xml">
+      <!--<HintPath>..\packages\distribyte.1.0.1-alpha\lib\System.Xml.dll</HintPath>
+      <Private>True</Private>-->
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <!--<HintPath>..\packages\distribyte.1.0.1-alpha\lib\System.Xml.Linq.dll</HintPath>
+      <Private>True</Private>-->
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StaticFilesEndpoint.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="feed.html" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,464 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Welcome to Glitter</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" rel='stylesheet' type='text/css'>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Niconne" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+
+    <style>
+        html {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #E7F0F5;
+            height: 100%;
+            background-attachment: fixed;
+            background-size: cover;
+            font-family: "Roboto";
+            font-weight: 300;
+        }
+
+        h1, h3 {
+            font-weight: 300;
+        }
+
+        .item {
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #B3B4B6;
+        }
+
+        strong {
+            font-weight: bold;
+        }
+
+        .gleet {
+            margin-top: 5px;
+            padding: 10px;
+            border: 1px solid #B3B4B6;
+            background-color: #fff;
+            color: black;
+        }
+
+        ul {
+            padding-left: 5px;
+        }
+
+        li {
+            list-style-type: none;
+            margin-left: 5px;
+        }
+
+        .topbanner {
+            background: #54258d;
+            background: -moz-linear-gradient(left, #54258d 0%, #4195c4 40%, #4195c4 50%, #4195c4 59%, #4195c4 59%, #54258d 100%);
+            background: -webkit-linear-gradient(left, #54258d 0%,#4195c4 40%,#4195c4 50%,#4195c4 59%,#4195c4 59%,#54258d 100%);
+            background: linear-gradient(to right, #54258d 0%,#4195c4 40%,#4195c4 50%,#4195c4 59%,#4195c4 59%,#54258d 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#54258d', endColorstr='#54258d',GradientType=1 );
+            -webkit-box-shadow: 0px 10px 12px 0px rgba(0,0,0,0.3);
+            -moz-box-shadow: 0px 10px 12px 0px rgba(0,0,0,0.3);
+            box-shadow: 0px 10px 12px 0px rgba(0,0,0,0.3);
+            width: 100%;
+            top: 0px;
+            background-color: #4283BB;
+            color: white;
+            margin: 0px;
+            padding: 20px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .tabbutton {
+            float: left;
+            padding: 0;
+            cursor: pointer;
+        }
+
+            .tabbutton:hover a {
+                border-bottom-color: #FCB647;
+                border-bottom-style: solid;
+                border-bottom-width: 4px;
+            }
+
+        .active.tabbutton a {
+            border-bottom-color: #FCB647;
+            border-bottom-style: solid;
+            border-bottom-width: 4px;
+            color: black;
+        }
+
+        .tabbutton a {
+            width: 100%;
+            height: 100%;
+            padding: 10px;
+            margin: 0 5px;
+            text-decoration: none;
+            outline: none;
+        }
+
+        .userList li {
+            list-style: none;
+        }
+
+        .tab-content {
+            margin-top: 40px;
+        }
+
+        .gleet-attachment {
+            text-align: center;
+        }
+
+            .gleet-attachment img {
+                margin: 10px;
+            }
+
+        .circle {
+            position: absolute;
+            top: 4px;
+            left: -50px;
+            border-radius: 30px;
+            width: 60px;
+            height: 60px;
+            color: white;
+            padding-top: 16px;
+            border: 1px solid #fff;
+            font-size: 1.4em;
+            text-align: center;
+            box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.3);
+        }
+
+        .follow-item {
+            border-top: 1px solid #ccc;
+            padding: 10px;
+            padding-bottom: 20px;
+        }
+
+            .follow-item small {
+                color: #888;
+                font-size: 0.8em;
+                font-weight: 300;
+            }
+
+            .follow-item .icon {
+                background-color: #888;
+                float: left;
+                height: 40px;
+                width: 40px;
+                margin: 5px;
+                margin-right: 15px;
+                margin-bottom: 15px;
+            }
+
+        .command-area {
+            margin-bottom: 10px;
+            text-align: right;
+            padding-right: 20px;
+            font-size: 2em;
+            color: rgb(114, 127, 219);
+        }
+
+            .command-area i {
+                margin: 0 5px;
+                cursor: pointer;
+            }
+
+            .command-area i:hover {
+                color: black;
+            }
+    </style>
+</head>
+<body>
+    <div class="topbanner">
+        <h1 style="margin: 0px; font-size: 1.7em;"><strong style="font-family: 'Niconne', cursive; font-size: 2.3em;">Glitter</strong> is here</h1>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-3 col-md-3 col-lg-3" style="margin-top: 20px; padding: 0px; padding-right: 20px;">
+                <div class="item" style="background-color: #F59A0B; border-color: #fff; padding: 0; height: 77px; text-align: center; color: white;">
+                    <img src="https://distribyte.net/cdn/img/profile.jpg" style="width: 75px; height: 75px; float: left;" />
+                    <div style="margin-top: 10px; font-weight: 700;">
+                        User One
+                    </div>
+                    <div>
+                        <a href="javascript: void(0);" style="color: #fff;"><i class="fa fa-edit" aria-hidden="true"></i> Edit profile</a>
+                    </div>
+                </div>
+                <div class="item" style="padding-bottom: 40px; background-color: #5A95C1; color: #fff;">
+                    This is some text to describe your profile, who you are, and so on.
+                </div>
+                <div class="item" style="background-color: #5657A7; color: white; padding: 10px; text-align: center;">
+                    <h5>
+                        Images and Videos
+                    </h5>
+                </div>
+                <div class="item" style="background-color: #5657A7; color: white; padding: 0px; text-align: center;">
+                    <img src="https://distribyte.net/cdn/img/gallery.jpg" style="width: 100%;" />
+                </div>
+            </div>
+            <div class="col-xs-6 col-md-6 col-lg-6" style="margin-top: 20px; padding: 0px; padding-right: 20px;">
+                <ul role="tablist">
+                    <li class="tabbutton active">
+                        <a href="#gleetsTab" aria-controls="gleetsTab" role="tab" data-toggle="tab">
+                            Feed
+                        </a>
+                    </li>
+                    <li class="tabbutton">
+                        <a href="#followingTab" aria-controls="followingTab" role="tab" data-toggle="tab">
+                            Following
+                        </a>
+                    </li>
+                    <li class="tabbutton">
+                        <a href="#followersTab" aria-controls="followersTab" role="tab" data-toggle="tab">
+                            Followers
+                        </a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="gleetsTab">
+                        <div class="item" style="margin-bottom: 5px; margin-top: 5px; padding-bottom: 30px; padding-top: 30px; background-color: #C7D2E6">
+                            <input type="file" id="attachImage" style="display: none;" />
+                            <div class="input-group" style="width: 100%;">
+                                <input id="gleetText" type="text" class="form-control" />
+                                <span class="input-group-btn">
+                                    <button id="attachImageButon" class="btn btn-default form-control" type="button"><i class="fa fa-camera"></i></button>
+                                </span>
+                                <span class="input-group-btn" style="width: 20%;">
+                                    <button id="gleet" class="btn btn-default" style="width: 100%;" type="button">Gleet</button>
+                                </span>
+                            </div>
+                            <div style="text-align: center;"><img id="attachImagePreview" style="max-width: 100%; max-height: 500px; display: none; margin-top: 5px;" /></div>
+                        </div>
+                        <div data-bind="template: { foreach: gleets, beforeRemove: hideGleet, afterAdd: showGleet, }">
+                            <div class="gleet">
+                                <strong data-bind="text: '@' + ko.utils.unwrapObservable($data.UserName)"></strong> <span data-bind="text: new Date(parseInt($data.DateTimeUtc().substr(6))).toLocaleString()"></span> <br /><span data-bind="text: Text"></span>
+                                <div class="gleet-attachment" data-bind="if: $data.ImageData"><img style="max-width: 100%; max-height: 500px;" data-bind="attr: { src: $data.ImageData, }" /></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="followingTab">
+                        <div class="item" style="margin-bottom: 5px; margin-top: 5px; padding-bottom: 30px; padding-top: 30px; background-color: #C7D2E6">
+                            <div class="input-group" style="width: 100%;">
+                                <span class="input-group-addon">@</span>
+                                <input id="followee" type="text" class="form-control" />
+                                <span class="input-group-btn">
+                                    <button id="follow" class="btn btn-default" type="button">Follow</button>
+                                </span>
+                            </div>
+                        </div>
+                        <h3>
+                            Following
+                        </h3>
+                        <ul data-bind="foreach: following" class="userList">
+                            <li data-bind="text: '@' + $data"></li>
+                        </ul>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="followersTab">
+                        <h3>
+                            Followers
+                        </h3>
+                        <ul data-bind="foreach: followers" class="userList">
+                            <li data-bind="text: '@' + $data"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-3 col-md-3 col-lg-3  pull-right" style="margin-top: 10px;">
+                <div class="command-area">
+                    <i class="fa fa-home" aria-hidden="true"></i><i class="fa fa-commenting-o" aria-hidden="true"></i><i class="fa fa-bell-o" aria-hidden="true"></i>
+                </div>
+                <div class="item" style="margin-left: 20px;">
+                    <div style="position: relative; padding-left: 30px; padding: 25px;">
+                        <div class="circle" style="background-color: rgb(254, 170, 54);" data-bind="text: TotalGleets"></div>
+                        Gleets
+                    </div>
+                    <div style="position: relative; padding-left: 30px; padding: 25px;">
+                        <div class="circle" style="background-color: rgb(77, 188, 233);" data-bind="text: following && ko.utils.unwrapObservable(following).length"></div>
+                        Following
+                    </div>
+                    <div style="position: relative; padding-left: 30px; padding: 25px;">
+                        <div class="circle" style="background-color: rgb(133, 108, 176);" data-bind="text: followers && ko.utils.unwrapObservable(followers).length"></div>
+                        Followers
+                    </div>
+                </div>
+                <div class="item" style="margin-top: 20px; padding: 0px;">
+                    <div style="padding: 10px;"><h4>Who to follow</h4></div>
+                    <div class="follow-item">
+                        <div class="icon"></div>
+                        AppleInsider<br /><small>@appleinsider</small>
+                    </div>
+                    <div class="follow-item">
+                        <div class="icon"></div>
+                        Amazon Web Services<br /><small>@aws</small>
+                    </div>
+                    <div class="follow-item">
+                        <div class="icon"></div>
+                        Google<br /><small>@google</small>
+                    </div>
+                    <div class="follow-item">
+                        <div class="icon"></div>
+                        IBM<br /><small>@ibm</small>
+                    </div>
+                </div>
+                <div class="item" style="margin-top: 20px; padding: 10px; margin-bottom: 40px;">
+                    <span style="font-size: 0.8em; color: rgb(114, 127, 219); font-weight: 400;">Copyright © 2016 Glitter</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout.mapping/2.4.1/knockout.mapping.min.js"></script>
+
+    <script>
+        $(function () {
+            var doRequest = function () {
+
+            };
+
+            var username = 'foo';
+
+            function getParameterByName(name, url) {
+                if (!url) url = window.location.href;
+                name = name.replace(/[\[\]]/g, "\\$&");
+                var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                    results = regex.exec(url);
+                if (!results) return null;
+                if (!results[2]) return '';
+                return decodeURIComponent(results[2].replace(/\+/g, " "));
+            }
+
+            username = getParameterByName('user') || username;
+
+            var model = {
+                gleets: ko.mapping.fromJS([]),
+                following: ko.mapping.fromJS([]),
+                followers: ko.mapping.fromJS([]),
+                TotalGleets: 0,
+            };
+
+            model.showGleet = function (elem) { if (elem.nodeType === 1) $(elem).hide().fadeIn() }
+            model.hideGleet = function (elem) { if (elem.nodeType === 1) $(elem).fadeOut(function () { $(elem).remove(); }) }
+
+            ko.applyBindings(model);
+
+            var ver = -1;
+            var running = true;
+            var refreshData = function () {
+                var jqxhr = $.ajax({
+                    url: 'service/feed/?user=' + username + '&ver=' + ver,
+                    type: 'GET',
+                    dataType: "json",
+                    cache: false,
+                    timeout: 35000,
+                }).done(function (data) {
+                    if (data && data.Gleets) {
+                        var mapping = {
+                            key: function (data) {
+                                return ko.utils.unwrapObservable(data.DateTimeUtc);
+                            },
+                        }
+
+                        ko.mapping.fromJS(data.Gleets, mapping, model.gleets);
+
+                        ko.mapping.fromJS(data.Following, {}, model.following);
+
+                        ko.mapping.fromJS(data.Followers, {}, model.followers);
+
+                        ver = data.Ver;
+                    }
+
+                    if (running) {
+                        setTimeout(refreshData, 100);
+                    }
+                })
+                .fail(function () {
+                    if (running) {
+                        setTimeout(refreshData, 2000);
+                    }
+                })
+            };
+            var imageAttached = false;
+
+            $('#gleet').on('click', function () {
+                var data = {
+                    Text: $('#gleetText').val(),
+                };
+
+                if (imageAttached)
+                {
+                    var imgSrc = $('#attachImagePreview').get(0).src;
+                    data.ImageData = imgSrc;
+                }
+
+                var jqxhr = $.ajax({
+                    url: 'service/post/?user=' + username,
+                    type: 'POST',
+                    data: JSON.stringify(data),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    cache: false,
+                    timeout: 15000,
+                })
+                .done(function () {
+                });
+                $('#gleetText').val('');
+                imageAttached = false;
+                $('#attachImagePreview').hide();
+            })
+
+            $('#attachImageButon').on('click', function () {
+                $('#attachImage').click();
+            });
+
+            function readFile() {
+                if (this.files && this.files[0]) {
+                    var FR = new FileReader();
+                    FR.onload = function (e) {
+                        document.getElementById("attachImagePreview").src = e.target.result;
+                        $('#attachImagePreview').slideDown();
+                        imageAttached = true;
+                    };
+                    FR.readAsDataURL(this.files[0]);
+                }
+            }
+
+            $('#attachImage').on("change", readFile);
+
+            $('#follow').on('click', function () {
+                var jqxhr = $.ajax({
+                    url: 'service/follow/?user=' + username + '&followeeName=' + $('#followee').val(),
+                    type: 'POST',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    cache: false,
+                    timeout: 15000,
+                })
+                .done(function () {
+
+                });
+                $('#followee').val('');
+            })
+            refreshData();
+
+        });
+    </script>
+
+</body>
+</html>
