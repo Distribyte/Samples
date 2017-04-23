@@ -11,7 +11,7 @@ namespace Samples.Glitter
     public class StaticFilesEndpoint
     {
         [OperationContract]
-        [WebInvoke(Method = "GET", UriTemplate = "/feed")]
+        [WebInvoke(Method = "GET", UriTemplate = "/")]
         public Stream GetFile()
         {
             var assembly = Assembly.GetExecutingAssembly();
